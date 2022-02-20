@@ -1,3 +1,100 @@
+/*Importing Google fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat+Alternates:ital,wght@1,200&display=swap');
+
+
+/*Site Default Settings*/
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
 body {
-    background: green;
+    background: #00610D;
+}
+
+/*Header*/
+header {
+    padding: 0 5px;
+    height: 100px;
+}
+
+
+#logo {
+    float: left
+}
+
+/*Total Goal area */
+.score-area {
+    float: left
+}
+
+
+/* Options */
+.options {
+    float: right;
+}
+
+.options li {
+    float: left;
+    list-style-type: none;
+    margin-right: 30px;
+}
+
+.options a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.options a:hover {
+    border-bottom: 2px solid #A90D0D;
+    color: #A90D0D;
+}
+
+.options .active {
+    color: #A90D0D !important;
+    border-bottom: 2px solid #A90D0D;
+}
+
+.options,
+#logo {
+    line-height: 50px;
+}
+
+
+
+
+
+/*Heading*/
+
+h1 {
+    color: white;
+    margin: 20px auto;
+
+}
+
+.score-area {
+    background: blue;
+}
+
+.options {
+    background: red;
+}
+
+/*Game Canvas*/
+
+#game-area {
+    background-color: blueviolet;
+    height: 100px;
+    clear: both;
+}
+
+.ball-start-position {
+
+    background: pink;
+}
+
+.goals-posts {
+    background: orange;
 }
