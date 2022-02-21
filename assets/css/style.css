@@ -12,6 +12,7 @@
 
 body {
     background: #00610D;
+    overflow-x:hidden
 }
 
 /*Header*/
@@ -93,8 +94,30 @@ h1 {
 .ball-start-position {
 
     background: pink;
+    background: url('../images/soccer-ball.png') no-repeat center center;
+    height: 100px;
+    margin: 0 auto;
+    animation: rollin 2.0s linear;
+    
 }
 
-.goals-posts {
+
+@keyframes rollin {
+    0% { margin-left:100%;
+        }
+    100% {margin-left:0%; 
+        transform: rotate(-360deg); }
+  }
+
+
+
+
+
+
+.goals-posts-outer {
     background: orange;
+    border: 3px solid white;
+    border-bottom: 1px solid white;
+    width: 50%;
+    margin: 0 auto;
 }
