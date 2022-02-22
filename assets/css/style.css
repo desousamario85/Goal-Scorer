@@ -12,7 +12,18 @@
 
 body {
     background: #00610D;
-    overflow-x:hidden
+    overflow-x: hidden;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: white;
+    font-weight: bold;
+}
+
+
+/*Reusable CSS Rules*/
+
+.text-center {
+
+    text-align: center;
 }
 
 /*Header*/
@@ -23,24 +34,37 @@ header {
 
 
 #logo {
-    float: left
+    float: left;
+    width: 25%;
 }
 
 /*Total Goal area */
 .score-area {
-    float: left
+    float: left;
+    margin: auto;
 }
 
 
-/* Options */
+/* Options Selections*/
+
 .options {
+    width: 25%;
     float: right;
 }
 
 .options li {
-    float: left;
+    float: right;
     list-style-type: none;
-    margin-right: 30px;
+    margin-right: 10px !important;
+    font-size: 120%;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: auto;
+    text-align: center;
+
+
 }
 
 .options a {
@@ -48,19 +72,10 @@ header {
     color: inherit;
 }
 
-.options a:hover {
-    border-bottom: 2px solid #A90D0D;
-    color: #A90D0D;
-}
-
-.options .active {
-    color: #A90D0D !important;
-    border-bottom: 2px solid #A90D0D;
-}
-
-.options,
-#logo {
-    line-height: 50px;
+.options li:hover {
+    background: white;
+    color: #00610D;
+    cursor: pointer;
 }
 
 
@@ -72,15 +87,27 @@ header {
 h1 {
     color: white;
     margin: 20px auto;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    font-size: 300%
+}
 
+h2 {
+    font-size: 120%;
 }
 
 .score-area {
     background: blue;
+    text-align: center;
+    width: 50%;
+    height: inherit;
+    position: relative;
 }
 
-.options {
-    background: red;
+.scores {
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 /*Game Canvas*/
@@ -98,26 +125,93 @@ h1 {
     height: 100px;
     margin: 0 auto;
     animation: rollin 2.0s linear;
-    
+    clear: both;
+
 }
 
 
 @keyframes rollin {
-    0% { margin-left:100%;
-        }
-    100% {margin-left:0%; 
-        transform: rotate(-360deg); }
-  }
+    0% {
+        margin-left: 100%;
+    }
+
+    100% {
+        margin-left: 0%;
+        transform: rotate(-360deg);
+    }
+}
+
+
+/*Goal posts Start*/
 
 
 
-
-
-
-.goals-posts-outer {
+#goals-posts-outer {
     background: orange;
     border: 3px solid white;
     border-bottom: 1px solid white;
-    width: 50%;
     margin: 0 auto;
+    width: 32rem;
+    display: block;
+}
+
+
+.goals-posts-inner {
+    background: url('../images/goal-net.png') no-repeat center center;
+    background-size: contain;
+    float: left;
+    height: 5rem;
+    width: 8rem;
+}
+
+.goals-posts-inner:hover {
+    cursor: pointer;
+    background: url('../images/goal-net.png') no-repeat center center;
+    background-color: lawngreen;
+}
+
+
+/*Goal posts End*/
+
+/*Game Controls*/
+#start-game {
+    font-size: 150%;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: auto;
+    text-align: center;
+    clear: both;
+
+
+}
+
+#end-game {
+    font-size: 150%;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: auto;
+    text-align: center;
+    clear: both;
+    background-color: red;
+    visibility: hidden;
+    z-index: -1;
+}
+
+#start-game:hover {
+    background: white;
+    color: #00610D;
+    cursor: pointer;
+
+
+}
+
+#end-game:hover {
+    background: white;
+    color: red;
+    cursor: pointer;
+
 }
