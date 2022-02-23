@@ -126,6 +126,8 @@ h2 {
     margin: 0 auto;
     animation: rollin 2.0s linear;
     clear: both;
+    visibility: hidden;
+
 
 }
 
@@ -193,12 +195,13 @@ h2 {
     padding: 10px;
     border: 1px solid white;
     border-radius: 5px;
-    margin: auto;
+    margin: 10px auto;
     text-align: center;
     clear: both;
     background-color: red;
     visibility: hidden;
     z-index: -1;
+
 }
 
 #start-game:hover {
@@ -213,5 +216,28 @@ h2 {
     background: white;
     color: red;
     cursor: pointer;
+
+
+}
+
+#next-shot {
+    font-size: 150%;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: auto;
+    text-align: center;
+    clear: both;
+    visibility: hidden;
+
+
+}
+
+#next-shot:hover {
+    background: white;
+    color: #00610D;
+    cursor: pointer;
+
 
 }
