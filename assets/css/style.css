@@ -134,7 +134,7 @@ h2 {
     background: url('../images/soccer-ball.png') no-repeat center center;
     height: 100px;
     margin: 0 auto;
-    animation: rollin 2.0s linear;
+    animation: rollin 1.0s linear;
     clear: both;
     visibility: hidden;
 }
