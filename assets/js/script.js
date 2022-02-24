@@ -15,7 +15,7 @@ function startGame() {
 
     for (let i = 0; i < goalSetting; i++) {
         let goalsNet = document.getElementById("goals-posts-outer")
-        let element = document.createElement('class')
+        let element = document.createElement('div')
         element.className = "goals-posts-inner"
         goalsNet.appendChild(element)
         goalsNet.children.item(i).innerHTML = i
@@ -37,7 +37,7 @@ function startGame() {
     console.log(goalSectionSelected)
     for (let goalSelected of goalSectionSelected) {
         goalSelected.addEventListener('click', function(event) {
-                stopNextKick;
+                stopNextKick();
                 var audio = new Audio('../assets/audio/soccer-ball-kick.wav');
                 audio.play()
                 let randomNumber = Math.floor(Math.random() * (1, goalSetting));
@@ -48,7 +48,7 @@ function startGame() {
                     nextshotDiv.style.visibility = "visible"
                 } else {
                     console.log(randomNumber)
-                    this.setAttribute("style", "background: url('../assets/images/soccer-ball.png') no-repeat center center;pointer-events:none");
+                    this.setAttribute("style", "background: url('../assets/images/soccer-ball.png') no-repeat center center;pointer-events:none;background-size: 33%");
                     showBall.setAttribute("style", "background: url('../assets/images/soccer-player.png') no-repeat center center; visibility:visible");
                     void showBall.offsetWidth;
                     nextshotDiv.style.visibility = "visible"
@@ -65,9 +65,27 @@ function startGame() {
 }
 
 function stopNextKick() {
-
+    let goalSectionSelected = document.getElementsByClassName("goals-posts-inner")
     for (let goalSelected of goalSectionSelected) {
-        this.setAttribute("style", "pointer-events:none")
+        goalSelected.setAttribute("style", "pointer-events:none")
         console.log("triggered")
+    }
+}
+
+nextshotDiv.addEventListener('click', nextKick)
+
+function nextKick() {
+    let goalSectionSelected = document.getElementsByClassName("goals-posts-inner")
+    for (let goalSelected of goalSectionSelected) {
+        goalSelected.setAttribute("style", "pointer-events:auto")
+        nextshotDiv.style.visibility = "hidden"
+        console.log("triggered")
+
+
+        showBall.classList.remove("ball-start-position");
+        void showBall.offsetWidth;
+        showBall.setAttribute("style", "background: url('../assets/images/soccer-ball.png') no-repeat center center;")
+        showBall.classList.add("ball-start-position");
+        showBall.style.visibility = "visible"
     }
 }
