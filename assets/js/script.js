@@ -1,17 +1,19 @@
-let startDiv = document.getElementById("start-game");
-let endDiv = document.getElementById("end-game")
-let nextshotDiv = document.getElementById("next-shot")
-let showBall = document.getElementsByClassName("ball-start-position")[0]
-console.log("Update refreshed 6")
+var startDiv = document.getElementById("start-game");
+var endDiv = document.getElementById("end-game")
+var nextshotDiv = document.getElementById("next-shot")
+var showBall = document.getElementsByClassName("ball-start-position")[0]
+var levelSelected = document.getElementsByClassName("levels")[0].children
+console.log(levelSelected)
+
+console.log("Update refreshed 8")
 
 console.log(showBall)
 
 console.log(startDiv)
 startDiv.addEventListener('click', startGame, false)
 
-function startGame() {
 
-    let goalSetting = 12;
+function startGame() {
 
     for (let i = 0; i < goalSetting; i++) {
         let goalsNet = document.getElementById("goals-posts-outer")
@@ -42,14 +44,14 @@ function startGame() {
                 audio.play()
                 let randomNumber = Math.floor(Math.random() * (1, goalSetting));
                 if (this.innerHTML == randomNumber) {
-                    this.setAttribute("style", "background: url('../assets/images/goalkeeper.png') no-repeat center center; pointer-events:none")
-                    showBall.setAttribute("style", "background: url('../assets/images/soccer-player.png') no-repeat center center; visibility:visible");
+                    this.setAttribute("style", "background: url('assets/images/goalkeeper.png') no-repeat center center; pointer-events:none")
+                    showBall.setAttribute("style", "background: url('assets/images/soccer-player.png') no-repeat center center; visibility:visible");
                     console.log(randomNumber)
                     nextshotDiv.style.visibility = "visible"
                 } else {
                     console.log(randomNumber)
-                    this.setAttribute("style", "background: url('../assets/images/soccer-ball.png') no-repeat center center;pointer-events:none;background-size: 33%");
-                    showBall.setAttribute("style", "background: url('../assets/images/soccer-player.png') no-repeat center center; visibility:visible");
+                    this.setAttribute("style", "background: url('assets/images/soccer-ball.png') no-repeat center center;pointer-events:none;background-size: 33%");
+                    showBall.setAttribute("style", "background: url('assets/images/soccer-player.png') no-repeat center center; visibility:visible");
                     void showBall.offsetWidth;
                     nextshotDiv.style.visibility = "visible"
 
@@ -79,13 +81,42 @@ function nextKick() {
     for (let goalSelected of goalSectionSelected) {
         goalSelected.setAttribute("style", "pointer-events:auto")
         nextshotDiv.style.visibility = "hidden"
-        console.log("triggered")
-
-
-        showBall.classList.remove("ball-start-position");
-        void showBall.offsetWidth;
-        showBall.setAttribute("style", "background: url('../assets/images/soccer-ball.png') no-repeat center center;")
-        showBall.classList.add("ball-start-position");
-        showBall.style.visibility = "visible"
+        console.log("triggered");
+        resetBallAnimation();
     }
+}
+
+function resetBallAnimation() {
+    showBall.classList.remove("ball-start-position");
+    void showBall.offsetWidth;
+    showBall.setAttribute("style", "background: url('assets/images/soccer-ball.png') no-repeat center center;")
+    showBall.classList.add("ball-start-position");
+    showBall.style.visibility = "visible"
+}
+
+
+for (level of levelSelected) {
+    level.addEventListener('click', function(event) {
+        if (this.innerText === "Easy") {
+            goalSetting = 12
+            console.log(this.innerText)
+        } else if (this.innerText === "Meduim") {
+            goalSetting = 9
+            console.log(this.innerText)
+        } else if (this.innerText === "Hard") {
+            goalSetting = 6
+            console.log(this.innerText)
+        } else if (this.innerText === "Very Hard") {
+            goalSetting = 4
+            console.log(this.innerText)
+        } else if (this.innerText == "The Impossible") {
+            goalSetting = 2
+            console.log(this.innerText)
+        } else {
+            alert('Invalid selection. Please ensure a level is selected.')
+
+        }
+        console.log
+    })
+
 }
