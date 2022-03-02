@@ -40,6 +40,7 @@ hr {
 header {
     padding: 0 5px;
     height: 100px;
+
 }
 
 
@@ -51,13 +52,14 @@ header {
 
 
 
-
 /* Options Selections*/
 
 .options {
-    width: 25%;
+    width: 50%;
     float: right;
     margin-right: 3%;
+    margin-top: 30px;
+
 }
 
 .options li {
@@ -65,14 +67,12 @@ header {
     list-style-type: none;
     margin-right: 10px !important;
     font-size: 120%;
-    width: 200px;
+    width: 150px;
     padding: 10px;
     border: 1px solid white;
     border-radius: 5px;
     margin: auto;
     text-align: center;
-
-
 }
 
 .options a {
@@ -286,7 +286,7 @@ h2 {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 800px;
+    width: 25%;
     background: #fff;
     border-radius: 4px;
     transform: translate(-50%, -200%);
@@ -340,7 +340,6 @@ h2 {
 }
 
 .modal-area label {
-    float: left;
     display: inline-block;
     padding: 10px 20px;
     font-weight: 700;
@@ -384,7 +383,7 @@ footer {
 .levels {
 
 
-    width: 33%;
+    width: 90%;
 }
 
 ul.levels {
