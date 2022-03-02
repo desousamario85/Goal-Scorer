@@ -3,6 +3,7 @@ var endDiv = document.getElementById("end-game")
 var nextshotDiv = document.getElementById("next-shot")
 var showBall = document.getElementsByClassName("ball-start-position")[0]
 var levelSelected = document.getElementsByClassName("levels")[0].children
+var elementlevelSelected
 console.log(levelSelected)
 
 console.log("Update refreshed 8")
@@ -99,24 +100,36 @@ for (level of levelSelected) {
     level.addEventListener('click', function(event) {
         if (this.innerText === "Easy") {
             goalSetting = 12
-            console.log(this.innerText)
+
         } else if (this.innerText === "Meduim") {
             goalSetting = 9
-            console.log(this.innerText)
+
         } else if (this.innerText === "Hard") {
             goalSetting = 6
-            console.log(this.innerText)
+
         } else if (this.innerText === "Very Hard") {
             goalSetting = 4
-            console.log(this.innerText)
+
         } else if (this.innerText == "The Impossible") {
             goalSetting = 2
-            console.log(this.innerText)
+
         } else {
             alert('Invalid selection. Please ensure a level is selected.')
 
         }
-        console.log
+
+        highlightLevelSection()
+        this.classList.add("levels-selected")
+
+
     })
 
+
+
+}
+
+function highlightLevelSection() {
+    for (level of levelSelected) {
+        level.classList.remove("levels-selected")
+    }
 }

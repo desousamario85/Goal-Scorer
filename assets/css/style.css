@@ -409,10 +409,15 @@ ul.levels {
 .levels a {
     text-decoration: none;
     color: inherit;
+    background: red;
 }
 
 .levels li:hover {
     background: #02b419;
 
     cursor: pointer;
+}
+
+.levels-selected {
+    background: red !important;
 }
