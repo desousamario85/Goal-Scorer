@@ -1,4 +1,5 @@
 var startDiv = document.getElementById("start-game");
+
 var endDiv = document.getElementById("end-game")
 var nextshotDiv = document.getElementById("next-shot")
 var showBall = document.getElementsByClassName("ball-start-position")[0]
@@ -12,6 +13,7 @@ console.log(showBall)
 
 console.log(startDiv)
 startDiv.addEventListener('click', startGame, false)
+endDiv.addEventListener('click', endGame, false)
 
 
 function startGame() {
@@ -55,6 +57,7 @@ function startGame() {
                     showBall.setAttribute("style", "background: url('assets/images/soccer-player.png') no-repeat center center; visibility:visible");
                     void showBall.offsetWidth;
                     nextshotDiv.style.visibility = "visible"
+                    incrementgameScore()
 
                 }
 
@@ -132,4 +135,25 @@ function highlightLevelSection() {
     for (level of levelSelected) {
         level.classList.remove("levels-selected")
     }
+}
+/**
+ * Incrementing the score when a goal is scored 
+ */
+
+function incrementgameScore() {
+    let oldScore = parseInt(document.getElementById("score").innerText)
+    document.getElementById("score").innerText = ++oldScore
+
+}
+
+function endGame() {
+
+    let goalNets = document.getElementsByClassName("goals-posts-inner")
+    while (goalNets.length > 0) goalNets[0].remove()
+
+    startDiv.style.visibility = "visible"
+    endDiv.style.visibility = "hidden"
+    showBall.style.visibility = "hidden"
+    nextshotDiv.style.visibility = "hidden"
+    document.getElementById("score").innerText = 0
 }
