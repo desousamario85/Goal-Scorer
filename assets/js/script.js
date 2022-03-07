@@ -79,6 +79,13 @@ function startGame() {
                         console.log(randomNumber)
                         outcome.style.display = "block"
                         outcome.textContent = "Goal Saved"
+                        audioCheck = document.getElementById('audio-check').checked
+                        if (audioCheck == true) {
+                            saveGoalAudio()
+
+                        }
+
+
                     } else {
                         console.log(randomNumber)
                         this.setAttribute("style", "background: url('assets/images/soccer-ball.png') no-repeat center center;pointer-events:none;background-size: 33%");
@@ -86,6 +93,11 @@ function startGame() {
                         incrementgameScore()
                         outcome.textContent = "Goal!!!!"
                         outcome.style.display = "block"
+                        audioCheck = document.getElementById('audio-check').checked
+                        if (audioCheck == true) {
+                            goalScoredAudio()
+
+                        }
 
                     }
                     addTotalkicks()
@@ -215,7 +227,8 @@ function endGame() {
     nextshotDiv.style.visibility = "hidden"
     document.getElementById("score").innerText = 0
     btn.style.display = "flex"
-    outcome.style.display = "none"
+    outcome.style.display = "none";
+    totalkicks = 1
 
 }
 
@@ -223,11 +236,24 @@ function endGame() {
  * when the user selects a box and if the Sound Effects is enabled.
  */
 function playAudio() {
-    var audio = new Audio('assets/audio/soccer-ball-kick.wav');
-    audio.play()
+    var ballKicked = new Audio('assets/audio/soccer-ball-kick.wav');
+    ballKicked.play()
 
 }
 
+function saveGoalAudio() {
+    var crowdBooAudio = new Audio('assets/audio/goal-save-audio.mp3');
+    crowdBooAudio.play()
+
+
+}
+
+function goalScoredAudio() {
+    var crowdCheerAudio = new Audio('assets/audio/goal-scored-audio.mp3');
+    crowdCheerAudio.play()
+
+
+}
 
 //Modal Functions
 
@@ -258,7 +284,7 @@ btn2.onclick = function() {
 function addTotalkicks() {
 
 
-    if (totalkicks == 3) {
+    if (totalkicks == 10) {
         console.log("addtotal kick triggerd")
         nextshotDiv.style.visibility = "hidden"
         let totalGoals = parseInt(document.getElementById("score").innerText)
