@@ -6,6 +6,7 @@ var showBall = document.getElementsByClassName("ball-start-position")[0]
 var levelSelected = document.getElementsByClassName("levels")[0].children
 var elementlevelSelected
 var outcome = document.getElementById("kick-outcome")
+var totalkicks = 1
 
 
 //Checks to see if game needs to start
@@ -71,23 +72,23 @@ function startGame() {
 
                     }
 
+
                     let randomNumber = Math.floor(Math.random() * (1, goalSetting));
                     if (this.innerHTML == randomNumber) {
                         this.setAttribute("style", "background: url('assets/images/goalkeeper.png') no-repeat center center; pointer-events:none")
-                        showBall.setAttribute("style", "background: url('assets/images/soccer-player.png') no-repeat center center; visibility:visible");
                         console.log(randomNumber)
-                        nextshotDiv.style.visibility = "visible"
+                        outcome.style.display = "block"
                         outcome.textContent = "Goal Saved"
                     } else {
                         console.log(randomNumber)
                         this.setAttribute("style", "background: url('assets/images/soccer-ball.png') no-repeat center center;pointer-events:none;background-size: 33%");
-                        showBall.setAttribute("style", "background: url('assets/images/soccer-player.png') no-repeat center center; visibility:visible");
                         void showBall.offsetWidth;
-                        nextshotDiv.style.visibility = "visible"
                         incrementgameScore()
                         outcome.textContent = "Goal!!!!"
+                        outcome.style.display = "block"
 
                     }
+                    addTotalkicks()
 
                 }
 
@@ -103,9 +104,6 @@ function startGame() {
     }
 
 }
-
-
-
 
 /**
  * Prevent user from selecting another box before clicking on Next Kick
@@ -127,6 +125,7 @@ function nextKick() {
         nextshotDiv.style.visibility = "hidden"
         console.log("triggered");
         resetBallAnimation();
+        outcome.style.display = "none"
     }
 }
 
@@ -181,7 +180,9 @@ for (level of levelSelected) {
     })
 }
 
-/**Highlight the user selected Level */
+/**
+ * Highlight the user selected Level
+ *  */
 function highlightLevelSection() {
     for (level of levelSelected) {
         level.classList.remove("levels-selected")
@@ -195,10 +196,14 @@ function incrementgameScore() {
     let oldScore = parseInt(document.getElementById("score").innerText)
     document.getElementById("score").innerText = ++oldScore
 
+
+
 }
 
 
-/**Reseting game by removing all the boxed created */
+/**
+ * Reseting game by removing all the boxed created 
+ * */
 function endGame() {
 
     let goalNets = document.getElementsByClassName("goals-posts-inner")
@@ -210,6 +215,7 @@ function endGame() {
     nextshotDiv.style.visibility = "hidden"
     document.getElementById("score").innerText = 0
     btn.style.display = "flex"
+    outcome.style.display = "none"
 
 }
 
@@ -243,4 +249,24 @@ btn.onclick = function() {
 }
 btn2.onclick = function() {
     modal2.style.display = "block";
+}
+
+
+/**
+ * Checks total kicks taken
+ *  */
+function addTotalkicks() {
+
+
+    if (totalkicks == 3) {
+        console.log("addtotal kick triggerd")
+        nextshotDiv.style.visibility = "hidden"
+        let totalGoals = parseInt(document.getElementById("score").innerText)
+        outcome.textContent = `You have scored ${totalGoals}/10`
+    } else {
+        ++totalkicks
+        nextshotDiv.style.visibility = "visible"
+        showBall.setAttribute("style", "background: url('assets/images/soccer-player.png') no-repeat center center; visibility:visible");
+        console.log(totalkicks)
+    }
 }
