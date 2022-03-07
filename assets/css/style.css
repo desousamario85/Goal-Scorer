@@ -20,6 +20,20 @@ body {
 
 }
 
+.btn-colors {
+
+    background: White;
+    color: #00610D;
+    cursor: pointer;
+}
+
+.btn-colors:hover {
+    background: lightgray;
+    color: #00610D;
+
+
+}
+
 
 /*Reusable CSS Rules*/
 
@@ -62,7 +76,7 @@ header {
 
 }
 
-.options li {
+.options button {
     float: right;
     list-style-type: none;
     margin-right: 10px !important;
@@ -75,17 +89,10 @@ header {
     text-align: center;
 }
 
-.options a {
+.options button a {
     text-decoration: none;
     color: inherit;
 }
-
-.options li:hover {
-    background: white;
-    color: #00610D;
-    cursor: pointer;
-}
-
 
 li {
     list-style-position: inside
@@ -172,8 +179,7 @@ h2 {
 
     margin: 0 auto;
     width: 32rem;
-    display: block;
-    height: 15rem;
+    display: table;
 }
 
 
@@ -181,7 +187,7 @@ h2 {
     background: url('../images/square-24.png');
     float: left;
     height: 5rem;
-    width: 8rem;
+    width: 33.33%;
     border: 1px solid white;
     box-sizing: border-box;
 }
@@ -223,13 +229,6 @@ h2 {
 
 }
 
-#start-game:hover {
-    background: white;
-    color: #00610D;
-    cursor: pointer;
-
-
-}
 
 #end-game:hover {
     background: white;
@@ -253,27 +252,28 @@ h2 {
 
 }
 
-#next-shot:hover {
-    background: white;
-    color: #00610D;
-    cursor: pointer;
-
-
-}
 
 /*Modal Styling*/
 
 .modal {
-    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    /* Hidden by default */
     position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
     width: 100%;
+    /* Full width */
     height: 100%;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    transition: all .5s ease-in-out;
-    opacity: 0;
-    z-index: -1;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
 }
 
 .modal:target {
@@ -283,17 +283,13 @@ h2 {
 }
 
 .modal-content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 25%;
-    background: #fff;
-    border-radius: 4px;
-    transform: translate(-50%, -200%);
-    transition: all .5s ease-in-out;
-    perspective: 1000px;
-    outline: 1px solid transparent;
-    opacity: 0;
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    /* Could be more or less, depending on screen size */
 }
 
 .modal:target .modal-content {
@@ -304,7 +300,7 @@ h2 {
     opacity: 1;
 }
 
-.modal-close {
+.close {
     float: right;
     text-decoration: none;
     padding: 22px 22px;
@@ -312,12 +308,11 @@ h2 {
     font-weight: 800;
     transition: all .5s ease-in-out;
     z-index: +1;
-    background: rgba(0, 0, 0, 0.1);
     text-align: center;
-    border-radius: 0 4px 0 0;
+
 }
 
-.modal-close:hover {
+.close:hover {
     color: #fff;
     background: rgba(0, 0, 0, 0.5);
 }
@@ -390,28 +385,27 @@ ul.levels {
     margin: 0 auto;
 }
 
-.levels li {
-    list-style-type: none;
+.levels button {
+    /* list-style-type: none; */
     margin-right: 10px !important;
     font-size: 120%;
     padding: 10px;
     border: 1px solid white;
     border-radius: 5px;
-    margin: auto;
-    text-align: center;
     background: #00610D;
     color: White;
-
+    display: flex;
+    width: 100%;
 
 }
 
-.levels a {
+.levels button a {
     text-decoration: none;
     color: inherit;
-    background: red;
+    display: block;
 }
 
-.levels li:hover {
+.levels button:hover {
     background: #02b419;
 
     cursor: pointer;
@@ -419,4 +413,110 @@ ul.levels {
 
 .levels-selected {
     background: red !important;
+}
+
+/*Audio Toggles*/
+.toggle {
+    --width: 80px;
+    --height: calc(var(--width) / 3);
+
+    position: relative;
+    display: inline-block;
+    width: var(--width);
+    height: var(--height);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    border-radius: var(--height);
+    cursor: pointer;
+    margin: 5px;
+}
+
+.toggle input {
+    display: none;
+}
+
+.toggle .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--height);
+    background-color: #ccc;
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle .slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--height));
+    height: calc(var(--height));
+    border-radius: calc(var(--height) / 2);
+    background-color: #fff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle input:checked+.slider {
+    background-color: #2196F3;
+}
+
+.toggle input:checked+.slider::before {
+    transform: translateX(calc(var(--width) - var(--height)));
+}
+
+.toggle .labels {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    font-family: sans-serif;
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle .labels::after {
+    content: attr(data-off);
+    position: absolute;
+    right: 5px;
+    color: #4d4d4d;
+    opacity: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle .labels::before {
+    content: attr(data-on);
+    position: absolute;
+    left: 5px;
+    color: #ffffff;
+    opacity: 0;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle input:checked~.labels::after {
+    opacity: 0;
+}
+
+.toggle input:checked~.labels::before {
+    opacity: 1;
+}
+
+#audio-controls {
+
+    float: right;
+    margin-right: 5%;
+}
+
+/*Kick Outcome*/
+#kick-outcome {
+    width: 32rem;
+    height: 100px;
+    background: #2196F3;
+    z-index: 3;
+    display: none;
+    text-align: center;
 }

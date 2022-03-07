@@ -39,10 +39,10 @@
         <!--Score End-->
         <!--Options Start-->
 
-        <ul class="options" id="menu">
-            <li><a href="#how-to-play">How to Play</a></li>
-            <li><a href="#select-level">Level</a></li>
-        </ul>
+        <div class="options" id="menu">
+            <button type="button" id="htpbtn" class="btn-colors">How to Play</button>
+            <button type="button" id="levelbtn" class="btn-colors">Level</button>
+        </div>
         <!--Options End-->
 
     </header>
@@ -53,7 +53,7 @@
     <!--Game Canvas Start-->
 
     <main id="game-area">
-
+        <div id="kick-outcome"></div>
         <!--Goal posts start-->
         <section>
             <div id="goals-posts-outer">
@@ -73,10 +73,10 @@
         <!--Ball position end-->
 
         <section>
-            <div id="start-game">
+            <div id="start-game" class="btn-colors">
                 Start Game
             </div>
-            <div id="next-shot">
+            <div id="next-shot" class="btn-colors">
                 Next kick
             </div>
             <div id="end-game">
@@ -93,7 +93,8 @@
 
     <div class="modal" id="how-to-play">
         <div class="modal-content">
-            <a href="#" class="modal-close" title="Close Modal">X</a>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
             <h2>How to Play</h2>
             <hr>
             <div class="modal-area">
@@ -117,19 +118,20 @@
     <!--How to Play Modal Start-->
 
     <div class="modal" id="select-level">
+
         <div class="modal-content">
-            <a href="#" class="modal-close" title="Close Modal">X</a>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+
             <h2>Select Level</h2>
             <hr>
             <div class="modal-area">
-                <div>
-                    <ul class="levels">
-                        <li>Easy</li>
-                        <li>Meduim</li>
-                        <li>Hard</li>
-                        <li>Very Hard</li>
-                        <li>The Impossible</li>
-                    </ul>
+                <div class="levels">
+
+                    <button type="button">Easy</button>
+                    <button type="button">Meduim</button>
+                    <button type="button">Hard</button>
+
                 </div>
             </div>
         </div>
@@ -140,6 +142,18 @@
 
 
     <!--Modal End Start-->
+
+    <!--Audio Controls Start-->
+    <div id="audio-controls">
+        <p>Sound Effects</p>
+        <label class="toggle">
+            <input type="checkbox" id="audio-check">
+            <span class="slider"></span>
+            <span class="labels" data-on="ON" data-off="OFF"></span>
+        </label>
+
+    </div>
+    <!--Audio Controls Start-->
 
     <!--Game Canvas End-->
     <hr>
@@ -172,6 +186,7 @@
     <!--Javascipt Start-->
 
     <script src="assets/js/script.js"></script>
+
 
     <!--Javascipt End-->
 
