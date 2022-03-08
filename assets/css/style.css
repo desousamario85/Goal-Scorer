@@ -27,6 +27,7 @@ body {
     background: White;
     color: #00610D;
     cursor: pointer;
+
 }
 
 .btn-colors:hover {
@@ -87,8 +88,8 @@ header {
     padding: 10px;
     border: 1px solid white;
     border-radius: 5px;
-    margin: auto;
     text-align: center;
+    margin-top: 10px;
 }
 
 .options button a {
@@ -117,18 +118,7 @@ h2 {
     margin-bottom: 10px;
 }
 
-.score-area {
-    background: #330061;
-    text-align: center;
-    margin: 0 auto;
-    width: 32rem;
-    clear: both;
-    border-radius: 5px;
-    padding: 5px;
-    margin-bottom: 5px;
 
-
-}
 
 /*Game Canvas*/
 
@@ -138,6 +128,19 @@ h2 {
     background-size: contain;
     clear: both;
     margin: 0 auto;
+
+}
+
+.score-area {
+    background: #330061;
+    text-align: center;
+    margin: 0 auto;
+    width: inherit;
+    clear: both;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+
 
 }
 
@@ -183,7 +186,7 @@ h2 {
     border: 3px solid white;
 
     margin: 0 auto;
-    width: 32rem;
+    width: inherit;
     display: table;
 }
 
@@ -400,7 +403,7 @@ ul.levels {
     border-radius: 5px;
     background: #00610D;
     color: White;
-    display: flex;
+
     width: 100%;
 
 }
@@ -519,7 +522,7 @@ ul.levels {
 
 /*Kick Outcome*/
 #kick-outcome {
-    width: 32rem;
+    width: inherit;
     height: 100px;
     z-index: 3;
     display: none;
@@ -530,4 +533,20 @@ ul.levels {
     font-weight: 900;
     text-decoration: blink 2s;
     font-family: Bebas Neue;
+}
+
+@media screen and (max-width: 700px) {
+    #game-area {
+        width: 100%;
+    }
+
+    .social-networks {
+        display: grid;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+
+
 }
