@@ -21,47 +21,59 @@
 
 
     <!-- Favicon End-->
+
     <title>Goal Scorer</title>
 </head>
 
 <body>
     <header>
+
         <!--Logo Start-->
+
         <div id="logo">
             <h1>
                 <img src="assets/images/soccer-ball.png" alt="Soccer Ball"> Goal Scorer
             </h1>
         </div>
+
         <!--Logo End-->
 
-        <!--Score Start-->
-
-        <!--Score End-->
         <!--Options Start-->
 
         <div class="options" id="menu">
             <button type="button" id="htpbtn" class="btn-colors text-center">How to Play</button>
             <button type="button" id="levelbtn" class="btn-colors text-centerr">Level</button>
         </div>
+
         <!--Options End-->
 
     </header>
     <hr>
+
     <!--Game Canvas Start-->
 
     <main id="game-area">
+
+        <!--Scorecard Start-->
+
         <div class="score-area">
             <h2 class="scores">Total Goals <span id="score"> 0 </span>/10</h2>
         </div>
+
+        <!--Scorecard End-->
+
+        <!--Goal Status Start-->
+
         <div id="kick-outcome"></div>
-        <!--Goal posts start-->
+
+        <!--Goal Status End-->
+
+        <!--Goals section start-->
 
         <div id="goals-posts-outer">
-
         </div>
 
-
-        <!--Goal posts end-->
+        <!--Goal Section end-->
 
         <!--Ball position start-->
 
@@ -69,8 +81,12 @@
 
             <div class="ball-start-position">
             </div>
+
         </section>
+
         <!--Ball position end-->
+
+        <!--Game Controls Start-->
 
         <section>
             <div id="start-game" class="btn-colors">
@@ -84,10 +100,10 @@
             </div>
 
         </section>
-
+        <!--Game Controls End-->
     </main>
 
-
+    <!--Game Canvas End-->
 
     <!--Modal Popup Start-->
 
@@ -105,13 +121,12 @@
                     <li>Select a Level</li>
                     <li>There will be a number of sections created for the selected level</li>
                     <li>Click on 1 of the sections to take a shot at goal</li>
-                    <li>After each kick, the user must click on Next Kick, to conitinue in the game.</li>
-                    <li>A user is allowed to take 10 kicks in total</li>
-                    <li>See how many goal you can score</li>
+                    <li>After each kick, click on Next Kick to conitinue with the game.</li>
+                    <li>You get 10 chances to score as many goals as possible</li>
                 </ol>
 
 
-                <p>User can end the game at anytime by click on End Game, to restart from the beginning</p>
+                <p>Click on End Game, to restart from the beginning</p>
 
             </div>
         </div>
@@ -119,7 +134,7 @@
 
     <!--How to Play Modal End-->
 
-    <!--How to Play Modal Start-->
+    <!--Level Selector Modal Start-->
 
     <div class="modal" id="select-level">
 
@@ -141,13 +156,14 @@
         </div>
     </div>
 
-    <!--How to Play Modal End-->
+    <!--Level Selector Modal End-->
 
 
 
     <!--Modal End Start-->
 
     <!--Audio Controls Start-->
+
     <div id="audio-controls">
         <p>Sound Effects</p>
         <label class="toggle">
@@ -157,10 +173,13 @@
         </label>
 
     </div>
+
     <!--Audio Controls Start-->
 
-    <!--Game Canvas End-->
     <hr>
+
+    <!--Footer Start-->
+
     <footer>
         <ul class="social-networks">
             <li>
@@ -181,6 +200,8 @@
 
     </footer>
 
+    <!--Footer End-->
+
     <!--Font Awesome Script Start-->
 
     <script src="https://kit.fontawesome.com/71b772ea4c.js" crossorigin="anonymous"></script>
@@ -190,7 +211,6 @@
     <!--Javascipt Start-->
 
     <script src="assets/js/script.js"></script>
-
 
     <!--Javascipt End-->
 

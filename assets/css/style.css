@@ -1,7 +1,5 @@
 /*Importing Google fonts*/
-
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat+Alternates:ital,wght@1,200&display=swap');
-
 
 /*Site Default Settings*/
 * {
@@ -16,37 +14,25 @@ body {
     font-family: 'Montserrat Alternates', sans-serif;
     color: white;
     font-weight: bold;
-
-
 }
 
-
-
 .btn-colors {
-
     background: White;
     color: #00610D;
     cursor: pointer;
-
 }
 
 .btn-colors:hover {
     background: lightgray;
     color: #00610D;
-
-
 }
 
-
 /*Reusable CSS Rules*/
-
 .text-center {
-
     text-align: center;
 }
 
 hr {
-
     width: 95%;
     height: 2px;
     background-color: white;
@@ -57,9 +43,7 @@ hr {
 header {
     padding: 0 5px;
     height: 100px;
-
 }
-
 
 #logo {
     float: left;
@@ -67,16 +51,16 @@ header {
     margin-left: 3%;
 }
 
-
+#logo a {
+    text-decoration: none;
+}
 
 /* Options Selections*/
-
 .options {
     width: 50%;
     float: right;
     margin-right: 3%;
     margin-top: 30px;
-
 }
 
 .options button {
@@ -101,9 +85,7 @@ li {
     list-style-position: inside
 }
 
-
 /*Heading*/
-
 h1 {
     color: white;
     margin: 20px auto;
@@ -118,17 +100,12 @@ h2 {
     margin-bottom: 10px;
 }
 
-
-
 /*Game Canvas*/
-
 #game-area {
-
     width: 32rem;
     background-size: contain;
     clear: both;
     margin: 0 auto;
-
 }
 
 .score-area {
@@ -140,12 +117,9 @@ h2 {
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 5px;
-
-
 }
 
 .ball-start-position {
-
     background: url('../images/soccer-ball.png') no-repeat center center;
     height: 100px;
     margin: 0 auto;
@@ -159,11 +133,8 @@ h2 {
     border-top: none;
     border-bottom-left-radius: 110px;
     border-bottom-right-radius: 110px;
-
     width: 100%;
-
 }
-
 
 @keyframes rollin {
     0% {
@@ -176,20 +147,14 @@ h2 {
     }
 }
 
-
 /*Goal posts Start*/
-
-
-
 #goals-posts-outer {
     background: #22882F;
     border: 3px solid white;
-
     margin: 0 auto;
     width: inherit;
     display: table;
 }
-
 
 .goals-posts-inner {
     background: url('../images/square-24.png');
@@ -206,9 +171,7 @@ h2 {
     background-color: lawngreen;
 }
 
-
 /*Goal posts End*/
-
 /*Game Controls*/
 #start-game {
     font-size: 150%;
@@ -219,8 +182,6 @@ h2 {
     margin: 15px auto;
     text-align: center;
     clear: both;
-
-
 }
 
 #end-game {
@@ -235,16 +196,12 @@ h2 {
     background-color: red;
     visibility: hidden;
     z-index: -1;
-
 }
-
 
 #end-game:hover {
     background: white;
     color: red;
     cursor: pointer;
-
-
 }
 
 #next-shot {
@@ -257,19 +214,15 @@ h2 {
     text-align: center;
     clear: both;
     visibility: hidden;
-
-
 }
 
-
 /*Modal Styling*/
-
 .modal {
     display: none;
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
-    z-index: 1;
+    z-index: 3;
     /* Sit on top */
     left: 0;
     top: 0;
@@ -312,13 +265,13 @@ h2 {
 .close {
     float: right;
     text-decoration: none;
-    padding: 22px 22px;
+    padding: 10px 16px;
     color: #424242;
-    font-weight: 800;
+    font-weight: 400;
     transition: all .5s ease-in-out;
     z-index: +1;
     text-align: center;
-
+    font-size: 200%;
 }
 
 .close:hover {
@@ -356,7 +309,6 @@ h2 {
 }
 
 /*Footer Styling*/
-
 footer {
     height: 75px;
     clear: both
@@ -379,14 +331,10 @@ footer {
     margin: 1%;
     padding: 5%;
     color: white;
-
 }
 
 /*Select Level Modal Styling*/
-
 .levels {
-
-
     width: 90%;
 }
 
@@ -395,7 +343,8 @@ ul.levels {
 }
 
 .levels button {
-    /* list-style-type: none; */
+    /* list-style-type: none;
+	*/
     margin-right: 10px !important;
     font-size: 120%;
     padding: 10px;
@@ -403,9 +352,7 @@ ul.levels {
     border-radius: 5px;
     background: #00610D;
     color: White;
-
     width: 100%;
-
 }
 
 .levels button a {
@@ -416,7 +363,6 @@ ul.levels {
 
 .levels button:hover {
     background: #02b419;
-
     cursor: pointer;
 }
 
@@ -428,7 +374,6 @@ ul.levels {
 .toggle {
     --width: 80px;
     --height: calc(var(--width) / 3);
-
     position: relative;
     display: inline-block;
     width: var(--width);
@@ -515,7 +460,6 @@ ul.levels {
 }
 
 #audio-controls {
-
     float: right;
     margin-right: 5%;
 }
@@ -535,12 +479,9 @@ ul.levels {
     font-family: Bebas Neue;
 }
 
-
 /*Error 404 Page*/
-
 #errorContainer {
     margin: 50px auto;
-
 }
 
 span.error-heading {
@@ -550,7 +491,6 @@ span.error-heading {
 .fa-sad-cry {
     font-size: 1000%;
     text-align: center;
-
 }
 
 @media screen and (max-width: 700px) {
@@ -573,8 +513,5 @@ span.error-heading {
     .fa-sad-cry {
         font-size: 500%;
         text-align: center;
-
     }
-
-
 }

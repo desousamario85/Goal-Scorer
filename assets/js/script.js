@@ -1,4 +1,4 @@
-//Main game variables
+//setting main game variables
 var startDiv = document.getElementById("start-game");
 var endDiv = document.getElementById("end-game")
 var nextshotDiv = document.getElementById("next-shot")
@@ -7,28 +7,30 @@ var levelSelected = document.getElementsByClassName("levels")[0].children
 var elementlevelSelected
 var outcome = document.getElementById("kick-outcome")
 var totalkicks = 1
-
+const ballKicked = new Audio('assets/audio/soccer-ball-kick.wav');
+const crowdBooAudio = new Audio('assets/audio/goal-save-audio.mp3');
+const crowdCheerAudio = new Audio('assets/audio/goal-scored-audio.mp3');
 
 //Checks to see if game needs to start
 
 startDiv.addEventListener('click', startGame, false)
-
 
 // Checks to see if game needs to end
 
 endDiv.addEventListener('click', endGame, false)
 
 // Get the modal
+
 const modal = document.getElementById("select-level");
 const modal2 = document.getElementById("how-to-play");
+
 // Get the button that opens the modal
+
 const btn = document.getElementById("levelbtn");
 const btn2 = document.getElementById("htpbtn");
 
-
 // Get the <span> element that closes the modal
 const spans = document.getElementsByClassName("close")
-
 
 /**
  * Creates all the goals selection boxes for the user
@@ -47,16 +49,11 @@ function startGame() {
             element.className = "goals-posts-inner"
             goalsNet.appendChild(element)
             goalsNet.children.item(i).innerHTML = i
-
             console.log(`Goal ${i} net create`)
-
-
         }
         showBall.classList.remove("ball-start-position");
         void showBall.offsetWidth;
         showBall.classList.add("ball-start-position");
-
-
         startDiv.style.visibility = "hidden"
         endDiv.style.visibility = "visible"
         showBall.style.visibility = "visible"
@@ -69,10 +66,7 @@ function startGame() {
                     audioCheck = document.getElementById('audio-check').checked
                     if (audioCheck == true) {
                         playAudio()
-
                     }
-
-
                     let randomNumber = Math.floor(Math.random() * (1, goalSetting));
                     if (this.innerHTML == randomNumber) {
                         this.setAttribute("style", "background: url('assets/images/goalkeeper.png') no-repeat center center; pointer-events:none")
@@ -82,10 +76,7 @@ function startGame() {
                         audioCheck = document.getElementById('audio-check').checked
                         if (audioCheck == true) {
                             saveGoalAudio()
-
                         }
-
-
                     } else {
                         console.log(randomNumber)
                         this.setAttribute("style", "background: url('assets/images/soccer-ball.png') no-repeat center center;pointer-events:none;background-size: 33%");
@@ -96,9 +87,7 @@ function startGame() {
                         audioCheck = document.getElementById('audio-check').checked
                         if (audioCheck == true) {
                             goalScoredAudio()
-
                         }
-
                     }
                     addTotalkicks()
 
@@ -114,7 +103,6 @@ function startGame() {
         console.log(modal)
         wasGameStarted = true
     }
-
 }
 
 /**
@@ -154,8 +142,8 @@ function resetBallAnimation() {
     showBall.style.visibility = "visible"
 }
 
-
 //check to see which level a user has selected
+
 for (level of levelSelected) {
     level.addEventListener('click', function(event) {
         if (this.innerText === "Easy") {
@@ -195,11 +183,13 @@ for (level of levelSelected) {
 /**
  * Highlight the user selected Level
  *  */
+
 function highlightLevelSection() {
     for (level of levelSelected) {
         level.classList.remove("levels-selected")
     }
 }
+
 /**
  * Incrementing the score when a goal is scored 
  */
@@ -216,6 +206,7 @@ function incrementgameScore() {
 /**
  * Reseting game by removing all the boxed created 
  * */
+
 function endGame() {
 
     let goalNets = document.getElementsByClassName("goals-posts-inner")
@@ -235,21 +226,22 @@ function endGame() {
 /**Play a small audio kick on someone kicking a ball 
  * when the user selects a box and if the Sound Effects is enabled.
  */
+
 function playAudio() {
-    var ballKicked = new Audio('assets/audio/soccer-ball-kick.wav');
+
     ballKicked.play()
 
 }
 
 function saveGoalAudio() {
-    var crowdBooAudio = new Audio('assets/audio/goal-save-audio.mp3');
+
     crowdBooAudio.play()
 
 
 }
 
 function goalScoredAudio() {
-    var crowdCheerAudio = new Audio('assets/audio/goal-scored-audio.mp3');
+
     crowdCheerAudio.play()
 
 
@@ -258,6 +250,7 @@ function goalScoredAudio() {
 //Modal Functions
 
 //Checking which Modal to be closed
+
 for (let span of spans) {
     span.addEventListener('click', function(event) {
             let level1parent = span.parentNode
@@ -268,8 +261,8 @@ for (let span of spans) {
     )
 }
 
-
 // When the user clicks on the button, open the modal
+
 btn.onclick = function() {
     modal.style.display = "block";
 }
@@ -277,10 +270,10 @@ btn2.onclick = function() {
     modal2.style.display = "block";
 }
 
-
 /**
  * Checks total kicks taken
  *  */
+
 function addTotalkicks() {
 
 
