@@ -1,108 +1,215 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Goal Scorer
 
-Welcome desousamario85,
+Goal Scorer is a small javascript game, which allow players to take penalty kicks. Depending on the level selected they will be able to select 1 possible box to determine if their selection (kick) was a goal. Players have 10 chances to try scorer as many goals as possible.  [here](https://desousamario85.github.io/Goal-Scorer/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Site Across Devices
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![Responsive Mock up Image](readme_images/is-responsive.png)
 
-## Gitpod Reminders
+## Features 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Navigation Options
+* The Navigation has 2 buttons, which will make a modal appear.
+* Level - Player can select a level before they start the game
+* How to Play - Provides the players instruction on how to play the game.
+* Javascript is used to make the modal appear and disappear, which removed the need to use # as an anchors.
 
-`python3 -m http.server`
+**Desktop Navigation**
 
-A blue button should appear to click: _Make Public_,
+![Navigation Menu Desktop](readme_images/top-nav.png)
 
-Another blue button should appear to click: _Open Browser_.
+**Mobile Navigation**
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![Mobile Navigation Image ](readme_images/mobile-nav.png)
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Footer
+    
+* The footer contains all the common social media web links. They are place holders, and they only navigate to the each social media platform land page.
 
-To log into the Heroku toolbelt CLI:
+**Footer**
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+![Footer Image](readme_images/footer.png)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+* Favicon
+    * Following common practices and is visible in almost every website, is an icon in the address bar, which can be the company’s logo or Text.
+    * For the Goal Scorer I used the logo to generate the favicon.
 
-------
+**Favicon**
 
-## Release History
+![Favicon Image](favicon-32x32.png)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* 404 Page
+    * 404 pages are a great way to tell the users that they have navigated to a broken link and still keep them on your site.
+    * Keep users on your site when they navigate to a broken link, allows the user to go back to the Home Page of the site.
+    * This prevents user leaving your site and leaving the impression that the site is broken or down.
+    * The Navigation buttons are removed to force the player to navigate back to the homepage.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![404 Error Page Image](readme_images/404-page.png)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Landing Page
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+The landing page of the game, is very basic. Players have the option to click on "Start Game" or click on the 2 buttons in the Navigation area, "Level" and "How to Play".
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![Landing Page Image](readme_images/before-game-start.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+If the player selects "Start Game" they are present with Level modal, to allow them to select a Level. If the player had already select a level, they will be able to play the game, without selecting a level again.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+#### Levels
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![Level Selection](readme_images/select-level.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+If the player wishes to change the level, they will be able to see which level they were previously on, as the current level will be highlighted.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+![Current Level Selected](readme_images/highlighted-selected-level.png)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+#### How to Play
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+Player are able to review the instruction of the game by click on "How to Play" in the navigation area. Once selected, a popup modal will appear to display the instructions.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![How to Play](readme_images/how-to-play.png)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+#### Audio
 
-------
+The game play does have some audio effect when the ball is kicked, goal scored and goal saved. by default the audio effects are turned off.
 
-## FAQ about the uptime script
+![Audio turned off](readme_images/audio-off.png)
 
-**Why have you added this script?**
+![Audio turned off](readme_images/audio-on.png)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Features Left to Implement
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+For future enhancement, I would like to have more animation feature in the game as it does seem very static, where there is no movement from the ball moving towards the goal.
+Improved UI Design to make the game more attractive.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Technologies
 
-**So….?**
+* HTML
+    * HTML was used to setup the core structure of the game. 
+* CSS
+    * CSS stylesheet was used to style the website and gaming feature
+* JavaScript
+    * Javascript is the core function of the game. It handles all elements to either create/remove, show/hide and playing audio effects with in the game.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+* GitPod
+    * A GitPod Workspace was used to code the website. Using Code Institute GitHub Template some other predefined technologies are installed to allow developers to integrate to Git for versioning and Python3 for http Server to preview our work before committing to GitHub. I have only named 2 integrations, but the Template does include 8 or more addition extensions.
+* GitHub
+    * Github was used to store our committed Source Code and have a live website using GitHub Pages.
+* Git 
+    * Version control, integrated with GitPod
+* Font Awesome
+    * Font Awesome icons were obtained using free registered account https://fontawesome.com/
+* Favicon.io
+    * favicon files were created at https://favicon.io/favicon-generator/
+* CSS Clean-up
+    * https://html-cleaner.com/css/ was user to clean up my CSS file to ensure the layout was consistent.
+* JS Validator
+    * I used https://validatejavascript.com/ to inspect my JavaScript code and clean up any issues. Once the JS was cleaned, it was tested to ensure it had no negative effect on the game.
 
-**Can I opt out?**
+### Testing
+ 
+For testing the responsiveness of the site, I used Chrome Developer Tool to resize the window from 1920px down 320px. Then same steps were applied with 50% zoom on the page. 
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+The site was testing on following mobile devices on Developer Tools
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+* iPhone SE
+* Pixel 5
+* Surface Pro 7
+* Samsung Galaxy A51/71
 
-**Anything more?**
+### Validator Testing 
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+Various validating tools were used to test the site, which can seen on the reports below.
 
----
+#### Lighthouse Reports
 
-Happy coding!
+##### Home Page report
+
+![Home Page report Image](docs/readme_images/lighthouse_overall.png)
+
+##### 404 Page report
+
+![404 Page report Image](docs/readme_images/lighthouse_overal_404.png)
+
+#### w3 Validator
+
+##### Home Page report
+
+![Home Page report Image](readme_images/index-html-validation.png)
+
+##### 404 Page report
+
+![404 Page report Image](readme_images/404-html-validation.png)
+
+
+#### Jigsaw CSS Validator
+
+![Jigsaw CSS Image](docs/readme_images/jigsaw_css.png)
+
+#### Accessibility
+
+Wave Evaluation tool was used to check and validate if I had any Accessibility issues
+
+##### Homepage Wave Report
+
+![Wave Homepage Image](docs/readme_images/wave_homepage.png)
+
+##### 404 Wave Report
+
+![Wave Homepage Image](docs/readme_images/wave_404.png)
+
+### Unresolved Bugs
+
+The webiste is responding great to the variuos mobile and desktop browsers. On the Mobile device the "X" in the mobile device has a line running through it when hovered over. This will be resolved on the next update of the website, when we start introducing more technologies to the site.
+
+## Deployment
+
+### Versioning
+
+The site was created using the GitPod workspaces which had Git installed part of it's extentions.
+
+Git commands were used to push through our code to Github, which can be seen below.
+
+``` git add <filename> ``` This command was used to add the file(s) to the staging area before they are committed.
+Most of the time ``` git add . ``` was used to stage the files for committing
+
+``` git commit -m “commit message” ``` This allows us to commit our changes to the local repository
+```git push``` pushes our code to GitHub to be published to our live site on Github Pages 
+
+#### Deployment to Github Pages
+
+The site was deployed to GitHub pages. The following steps were used to deploy the site.
+
+1. In the GitHub repository, navigate to the Settings tab
+![Deployment Step1 Image](docs/readme_images/deployment_step1.png)
+2. From the menu on left select 'Pages'
+3. From the source section drop-down menu, select the Branch: main
+4. Click 'Save'
+5. A live link will be displayed in a green banner when published successfully.
+![Deployment Pages Steps Image](docs/readme_images/deployment_steps.png)
+
+### Content 
+
+All written content on the site is my own is based on services that ,as a parent would like to see offered in 1 central location.
+
+### Media
+
+All Images on the site were provided and freely available on the listed sites below.
+
+* https://www.pexel.com
+* https://iconscout.com/illustrations/404-error
+* Photo by <a href="https://unsplash.com/@artem_kniaz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Artem Kniaz</a> on <a href="https://unsplash.com/s/photos/children-playing?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+### Credits
+
+Thanks to all forum contributors on the listed weblink which helped me code or resolve issues during the project. Their sample code or explanation helped me to include or add the functions on the website that I wanted.
+
+* https://getpublii.com/blog/one-line-css-solution-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header.html
+* https://www.sliderrevolution.com/resources/css-modal/
+* https://stackoverflow.com/questions/37738278/how-to-create-an-hours-of-operation-list-with-html-and-css
+
+To my mentor Daisy for providing a ReadMe Template , produced by Gareth-McGirr.
