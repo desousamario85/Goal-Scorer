@@ -1,6 +1,6 @@
 # Goal Scorer
 
-Goal Scorer is a small javascript game, which allow players to take penalty kicks. Depending on the level selected they will be able to select 1 possible box to determine if their selection (kick) was a goal. Players have 10 chances to try scorer as many goals as possible.  [here](https://desousamario85.github.io/Goal-Scorer/)
+Goal Scorer is a small javascript game, which allow players to take penalty kicks. Depending on the level selected they will be able to select 1 possible box to determine if their selection (kick) was a goal. Players have 10 chances to try scorer as many goals as possible. The live deployment of the game on Github can be played on the link [here](https://desousamario85.github.io/Goal-Scorer/)
 
 ## Site Across Devices
 
@@ -86,6 +86,9 @@ The game play does have some audio effect when the ball is kicked, goal scored a
 For future enhancement, I would like to have more animation feature in the game as it does seem very static, where there is no movement from the ball moving towards the goal.
 Improved UI Design to make the game more attractive.
 
+
+# Development
+
 ## Technologies
 
 * HTML
@@ -109,8 +112,36 @@ Improved UI Design to make the game more attractive.
     * https://html-cleaner.com/css/ was user to clean up my CSS file to ensure the layout was consistent.
 * JS Validator
     * I used https://validatejavascript.com/ to inspect my JavaScript code and clean up any issues. Once the JS was cleaned, it was tested to ensure it had no negative effect on the game.
+* Google fonts
+    * Customized fonts are used in site. Google fonts allows developers to import custom fonts from the library to use in their developments.
+* Font Awesome
+    * Provides custom image fonts which can be used as icons or images. The fonts don't pixelate when increase in size.
 
-### Testing
+## Wireframes
+
+### Desktop 
+
+#### Landing Page
+![Landing page Wireframe](readme_images/goal-scorer-index-wf.png)
+
+#### 404 Page
+![404 page Wireframe](readme_images/goal-scorer-404-wf.png)
+
+#### Level Select Modal
+![Level Select Wireframe](readme_images/goal-scorer-level-modal-wf.png)
+
+#### How to Play Modal
+![How to Play Wireframe](readme_images/goal-scorer-htp-modal-wf.png)
+
+### Tablet
+
+![Landing Page Tablet WireFrame](readme_images/goal-scorer-tablet-wf.png)
+
+### Mobile
+
+![Landing Page Mobile WireFrame](readme_images/goal-scorer-mobile-wf.png)
+
+## Testing
  
 For testing the responsiveness of the site, I used Chrome Developer Tool to resize the window from 1920px down 320px. Then same steps were applied with 50% zoom on the page. 
 
@@ -129,11 +160,11 @@ Various validating tools were used to test the site, which can seen on the repor
 
 ##### Home Page report
 
-![Home Page report Image](docs/readme_images/lighthouse_overall.png)
+![Home Page report Image](readme_images/lighthouse-report.png)
 
 ##### 404 Page report
 
-![404 Page report Image](docs/readme_images/lighthouse_overal_404.png)
+![404 Page report Image](readme_images/lighthouse-report-404.png)
 
 #### w3 Validator
 
@@ -148,7 +179,7 @@ Various validating tools were used to test the site, which can seen on the repor
 
 #### Jigsaw CSS Validator
 
-![Jigsaw CSS Image](docs/readme_images/jigsaw_css.png)
+![Jigsaw CSS Image](readme_images/css-validation.png)
 
 #### Accessibility
 
@@ -156,21 +187,21 @@ Wave Evaluation tool was used to check and validate if I had any Accessibility i
 
 ##### Homepage Wave Report
 
-![Wave Homepage Image](docs/readme_images/wave_homepage.png)
+![Wave Homepage Image](readme_images/index-wave-validator.png)
 
 ##### 404 Wave Report
 
-![Wave Homepage Image](docs/readme_images/wave_404.png)
+![Wave Homepage Image](readme_images/404-wave-validator.png)
 
 ### Unresolved Bugs
 
-The webiste is responding great to the variuos mobile and desktop browsers. On the Mobile device the "X" in the mobile device has a line running through it when hovered over. This will be resolved on the next update of the website, when we start introducing more technologies to the site.
+There were some reports where the audio was delay at times, which I have tried to resolve but it seems to be intermitted.
 
 ## Deployment
 
 ### Versioning
 
-The site was created using the GitPod workspaces which had Git installed part of it's extentions.
+The site was created using the GitPod workspaces which had Git installed part of it's extensions.
 
 Git commands were used to push through our code to Github, which can be seen below.
 
@@ -185,31 +216,40 @@ Most of the time ``` git add . ``` was used to stage the files for committing
 The site was deployed to GitHub pages. The following steps were used to deploy the site.
 
 1. In the GitHub repository, navigate to the Settings tab
-![Deployment Step1 Image](docs/readme_images/deployment_step1.png)
+![Deployment Step1 Image](readme_images/deployment_step1.png)
 2. From the menu on left select 'Pages'
 3. From the source section drop-down menu, select the Branch: main
 4. Click 'Save'
 5. A live link will be displayed in a green banner when published successfully.
-![Deployment Pages Steps Image](docs/readme_images/deployment_steps.png)
+![Deployment Pages Steps Image](readme_images/deployment_steps.png)
 
-### Content 
+## Bugs and debugging process
 
-All written content on the site is my own is based on services that ,as a parent would like to see offered in 1 central location.
+During the development of the project, there were a good few issues that I faced. Throughout the development I made use of the console.log feature in Javascript to determine if a function was triggering and how many times.
+
+* Animation on the ball was resetting back to left of the screen, when I needed it to be in the center. https://css-tricks.com/restart-css-animation/ provide a solution
+* Creating the goal boxes, created it own challenges at the beginning, but reviewing previous course modules helped resolve the issue.
+* Delay in audio clips, when the player selects a box. https://stackoverflow.com/questions/41425574/how-to-save-audio-files-on-browsers-cache-so-that-when-the-user-press-a-button provide me with some tips I can try to fix the issue. I used the .load on the audio variables to try fix the issue.
+* Incorrect z-index set on the Kick Outcome Div, which caused overlapping when the player selected a Modal to appear.
+* At the beginning the user flow was not correct and was confusing. issue was I had to check if the player had selected a level and if not call the Level Modal. problem was how to check to see if a variable was defined or set. https://stackoverflow.com/questions/5113374/javascript-check-if-variable-exists-is-defined-initialized provided me with a solution
+
+Above is only a few issue I can recall, but are the bugs that stand out to me.
 
 ### Media
 
 All Images on the site were provided and freely available on the listed sites below.
 
-* https://www.pexel.com
-* https://iconscout.com/illustrations/404-error
-* Photo by <a href="https://unsplash.com/@artem_kniaz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Artem Kniaz</a> on <a href="https://unsplash.com/s/photos/children-playing?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+* Audio effects - https://mixkit.co/free-sound-effects/soccer/ and https://www.epidemicsound.com/
+* Images - https://icons8.com/icon/PCw0IJIk0xFH/soccer-ball
+
 
 ### Credits
 
-Thanks to all forum contributors on the listed weblink which helped me code or resolve issues during the project. Their sample code or explanation helped me to include or add the functions on the website that I wanted.
+Thanks to all forum contributors on the listed web link which helped me code or resolve issues during the project. Their sample code or explanation helped me to include or add the functions on the website that I wanted.
 
-* https://getpublii.com/blog/one-line-css-solution-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header.html
-* https://www.sliderrevolution.com/resources/css-modal/
-* https://stackoverflow.com/questions/37738278/how-to-create-an-hours-of-operation-list-with-html-and-css
+* Audio effects - https://mixkit.co/free-sound-effects/soccer/ and https://www.epidemicsound.com/
+* Images - https://icons8.com/icon/PCw0IJIk0xFH/soccer-ball
+* Code Institute - Love Maths Walk through practice , as I used some of its feature in my game.
+* Code Institute Student Community - They helped with testing my project of their devices and provide valuable feedback.
 
-To my mentor Daisy for providing a ReadMe Template , produced by Gareth-McGirr.
+
